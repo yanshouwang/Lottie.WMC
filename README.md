@@ -9,7 +9,7 @@ Lottie 小程序的第三方组件项目，将小程序官方的 [lottie-minipro
 ## 安装
 
 ```
-npm install --save lottie-minicomponent
+npm install --save @yanshouwang/lottie-wmc
 ```
 
 ## 使用
@@ -18,7 +18,7 @@ npm install --save lottie-minicomponent
 ``` JSON
 {
     "usingComponents":{
-        "lottie":"../../miniprogram_npm/lottie-minicomponent/lottie"
+        "lottie":"../../miniprogram_npm/lottie-wmc/lottie"
     }
 }
 ```
