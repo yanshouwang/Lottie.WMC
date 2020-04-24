@@ -1,1 +1,3 @@
-<lottie></lottie>
+<view class="container">
+    <lottie data="{{catrim}}" />
+</view>
