@@ -1,5 +1,7 @@
 # Lottie.WMC
 
+![Node.js Package](https://github.com/yanshouwang/Lottie.WMC/workflows/Node.js%20Package/badge.svg)
+
 Lottie 小程序组件
 
 ## 介绍
