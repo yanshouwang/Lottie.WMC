@@ -20,7 +20,7 @@ npm install --save @yanshouwang/lottie-wmc
 ``` JSON
 {
     "usingComponents":{
-        "lottie":"../../miniprogram_npm/lottie-wmc/lottie"
+        "lottie":"../../miniprogram_npm/@yanshouwang/lottie-wmc/lottie"
     }
 }
 ```
