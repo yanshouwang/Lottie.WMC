@@ -5,10 +5,10 @@ declare module "lottie-miniprogram" {
 }
 
 interface LoadAnimationOption {
-    loop: boolean,
-    autoplay: boolean,
     animationData?: object,
     path?: string,
+    loop?: boolean,
+    autoplay?: boolean,
     rendererSettings: {
         context: Record<string, any>
     }

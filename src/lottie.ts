@@ -2,39 +2,31 @@ import lottie from "lottie-miniprogram";
 
 Component({
     properties: {
+        data: Object,
+        uri: String,
         loop: {
             type: Boolean,
             value: true
         },
-        auto: {
-            type: Boolean,
-            value: true
+        direction: {
+            type: Number,
+            value: 1
         },
-        data: Object,
-        uri: String
+        speed: {
+            type: Number,
+            value: 1
+        }
     },
-    observers: {
-        data(value: object) {
-            if (this.ani !== undefined) {
-                this.destroy();
-            }
-            if (value === null) {
-                return;
-            }
-            this.load(value);
+    lifetimes: {
+        attached() {
+            this.loadAnimation();
         },
-        uri(value: string) {
-            if (this.ani !== undefined) {
-                this.destroy();
-            }
-            if (value === "") {
-                return;
-            }
-            this.load(value);
+        detached() {
+            this.destroy();
         }
     },
     methods: {
-        load(value: Object | string) {
+        loadAnimation() {
             wx.createSelectorQuery()
                 .in(this)
                 .select("#canvas")
@@ -49,29 +41,25 @@ Component({
                     lottie.setup(canvas);
                     const option: LoadAnimationOption = {
                         loop: this.data.loop,
-                        autoplay: this.data.auto,
                         rendererSettings: {
                             context
                         }
                     };
-                    switch (typeof value) {
-                        case "object":
-                            option.animationData = value;
-                            break;
-                        case "string":
-                            option.path = value;
-                            break;
-                        default:
-                            break;
+                    if (this.data.data !== null) {
+                        option.animationData = this.data.data;
+                    }
+                    if (this.data.uri !== "") {
+                        option.path = this.data.uri;
                     }
                     this.ani = lottie.loadAnimation(option);
+                    this.ani.setDirection(this.data.direction);
+                    this.ani.setSpeed(this.data.speed);
                 })
                 .exec();
         },
         destroy() {
             // TODO: this.ani.destroy(); 方法报错，待官方修复
             this.ani.stop();
-            this.ani = undefined;
         }
     }
 });
