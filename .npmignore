@@ -14,3 +14,6 @@ docs
 miniprogram_dev
 node_modules
 coverage
+
+.github
+tsconfig.json
