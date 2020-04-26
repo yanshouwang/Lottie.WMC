@@ -9,7 +9,7 @@
     "mini",
     "component"
   ],
-  "main": "miniprogram_dist/lottie.js",
+  "main": "dist/lottie.js",
   "scripts": {
     "dev": "gulp dev --develop",
     "watch": "gulp watch --develop --watch",
@@ -20,19 +20,19 @@
     "test": "jest --bail",
     "test-debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --bail",
     "coverage": "jest ./test/* --coverage --bail",
-    "lint": "eslint \"source/**/*.js\" --fix",
+    "lint": "eslint \"src/**/*.js\" --fix",
     "lint-tools": "eslint \"tools/**/*.js\" --rule \"import/no-extraneous-dependencies: false\" --fix"
   },
-  "miniprogram": "miniprogram_dist",
+  "miniprogram": "dist",
   "jest": {
     "testEnvironment": "jsdom",
     "testURL": "https://jest.test",
     "collectCoverageFrom": [
-      "miniprogram_dist/**/*.js"
+      "dist/**/*.js"
     ],
     "moduleDirectories": [
       "node_modules",
-      "miniprogram_dist"
+      "dist"
     ]
   },
   "repository": {
